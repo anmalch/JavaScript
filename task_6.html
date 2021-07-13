@@ -1,0 +1,52 @@
+<!-- Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
+где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
+В зависимости от переданного значения операции выполнить одну из арифметических операций 
+(использовать функции из пункта 5) и вернуть полученное значение (использовать switch). -->
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getSum(arg1, arg2) {
+            return arg1 + arg2
+        }
+
+        function getSubtraction(arg1, arg2) {
+            return arg1 - arg2
+        }
+
+        function getDivision(arg1, arg2) {
+            return arg1 / arg2
+        }
+
+        function getMultiplication(arg1, arg2) {
+            return arg1 * arg2
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+': return getSum(arg1, arg2);
+                    break;
+                case '-': return getSubtraction(arg1, arg2);
+                    break;
+                case '/': return getDivision(arg1, arg2);
+                    break;
+                case '*': return getMultiplication(arg1, arg2);
+                    break;
+                default: return 'Неизвестный знак операции';
+
+            }
+        }
+        console.log(mathOperation(2, 8, '+'));
+    </script>
+</body>
+
+</html>
