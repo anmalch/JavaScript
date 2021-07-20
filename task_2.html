@@ -1,0 +1,34 @@
+<!--  2.Продолжить работу с интернет-магазином:
+2.1. В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+2.2. Реализуйте такие объекты.
+2.3. Перенести функционал подсчета корзины на объектно-ориентированную базу.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const basket = [
+            {name: 'apple', price: 80, weight: 5},
+            {name: 'melon', price: 50, weight: 3},
+            {name: 'pear', price: 75, weight: 2},
+            {name: 'banana', price: 50, weight: 1},
+            {name: 'grapes', price: 120, weight: 3},
+        ];
+
+        function countBasketPrice(basket) {
+            let totalCost = 0;
+            for (i = 0; i < basket.length; i++) {
+                totalCost = totalCost + basket[i].price * basket[i].weight;
+            }
+            return totalCost;
+        }
+
+        console.log(countBasketPrice(basket));
+    </script>
+</body>
+</html>

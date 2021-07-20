@@ -1,0 +1,36 @@
+<!-- Написать функцию, преобразующую число в объект. 
+    Передавая на вход число от 0 до 999, мы должны получить на выходе объект, 
+    в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+    Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+    Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log 
+    и вернуть пустой объект. -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fromNumberToObject(num) {
+            let myNumber = {};
+            if (num < 999) {
+                myNumber.ones = num % 10;
+                myNumber.tens = Math.floor((num / 10) % 10);
+                myNumber.hundreds = Math.floor(num / 100);
+                return myNumber;
+            }
+            else {
+                console.log('Ваше число превышает 999.');
+                return myNumber;
+            }
+        }
+        console.log(fromNumberToObject(1200));
+    </script>
+</body>
+
+</html>
