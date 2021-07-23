@@ -1,0 +1,51 @@
+<!--  Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре.  
+    Там должен быть только div, 
+    в который будет вставляться корзина, сгенерированная на базе JS:
+    2.1. Пустая корзина должна выводить строку «Корзина пуста»;
+    2.2. Наполненная должна выводить «В корзине: n товаров на сумму m рублей». -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+    
+<body>
+    <div id="my-basket"></div>
+    <script>
+        const myBasket = document.getElementById('my-basket');
+
+        const basket = [
+            //{name: 'apple', price: 80, weight: 5},
+            //{name: 'melon', price: 50, weight: 3},
+            //{name: 'pear', price: 75, weight: 2},
+            //{name: 'banana', price: 50, weight: 1},
+            //{name: 'grapes', price: 120, weight: 3},
+        ];
+
+        function countBasketPrice(basket) {
+            let totalCost = 0;
+            for (i = 0; i < basket.length; i++) {
+                totalCost = totalCost + basket[i].price * basket[i].weight;
+            }
+            return totalCost;
+        }
+
+        console.log(countBasketPrice(basket));
+        
+        
+
+        if (basket.length != 0) {
+            const text= document.createTextNode('В корзине ' + basket.length + ' товаров на сумму ' + countBasketPrice(basket));
+            myBasket.appendChild(text);
+        }
+        else { const text= document.createTextNode('Корзина пуста');
+            myBasket.appendChild(text);}
+
+
+    
+    </script>
+</body>
+</html>
